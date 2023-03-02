@@ -1,9 +1,11 @@
 'use strict';
 
+//Autor: Hamilton Fuzer de Oliveira
+
 const player0El = document.querySelector('.player--0');
 const player1El = document.querySelector('.player--1');
 const score0El = document.querySelector('#score--0'); // '#' selector para Id dos elementos do HTML
-const score1El = document.getElementById('score--1'); // outra forma de selecionar elemento pelo Id
+const score1El = document.getElementById('score--1'); // Outra forma de selecionar elemento pelo Id
 const current0El = document.getElementById('current--0');
 const current1El = document.getElementById('current--1');
 const diceEl = document.querySelector('.dice');
@@ -15,7 +17,7 @@ const btnHold = document.querySelector('.btn--hold');
 
 score0El.textContent = 0;
 score1El.textContent = 0;
-diceEl.classList.add('hidden'); // adicionando a classe hidden ao elemento dado pra ele começar escondido.
+diceEl.classList.add('hidden');
 
 let scores, currentScore, activePlayer, playing;
 
@@ -42,7 +44,7 @@ init();
 const switchPlayer = function () {
   currentScore = 0;
   document.getElementById(`current--${activePlayer}`).textContent = 0;
-  activePlayer = activePlayer === 0 ? 1 : 0; //verificando quem deve ser o prox a jogar
+  activePlayer = activePlayer === 0 ? 1 : 0; // Verificando quem deve ser o prox a jogar
   player0El.classList.toggle('player--active');
   player1El.classList.toggle('player--active'); // .toggle verifica se a classe existe ou não, retira se existe, adiciona se não existe
 };

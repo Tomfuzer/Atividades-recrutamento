@@ -1,18 +1,6 @@
 'use strict';
-// Aula - 68 até 72
-/*----
-console.log(document.querySelector('.message').textContent); // Selecionar o elemento document.querySel... ler o texto apropriadamente .textContent
-document.querySelector('.message').textContent = '🥳 Correct Number!'; // alterar o conteúdo da mensagem
-//console.log(document.querySelector('.message').textContent);
-document.querySelector('.number').textContent = 13;
-document.querySelector('.score').textContent = 10;
-// Linhas 7 e 8 - selecionando o objeto no HTML e alterando suas propriedades, neste caso, o textContent
 
-document.querySelector('.guess').value = 23;
-console.log(document.querySelector('.guess').value);
-----*/
-
-// Aula - 73 Events
+//Autor: Hamilton Fuzer de Oliveira
 
 function gerador() {
   const secretNumber = Math.trunc(Math.random() * 20) + 1;
@@ -58,7 +46,7 @@ document.querySelector('.check').addEventListener('click', function () {
   }
 });
 
-//Reset the game 'Again!'
+// Reset the game 'Again!'
 document.querySelector('.again').addEventListener('click', function () {
   displayMessage('Start guessing...');
   document.querySelector('.number').textContent = '?';
@@ -69,4 +57,3 @@ document.querySelector('.again').addEventListener('click', function () {
   document.querySelector('.guess').value = '';
   secretNumber = gerador();
 });
-//addEventListener primeiro parametro: qual eh o evento; segundo parametro: o que fazer quando o evento acontecer (function)

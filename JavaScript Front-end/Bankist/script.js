@@ -1,7 +1,7 @@
 'use strict';
 
-/////////////////////////////////////////////////
-/////////////////////////////////////////////////
+//Autor: Hamilton Fuzer de Oliveira
+
 // BANKIST APP
 
 /////////////////////////////////////////////////
@@ -114,7 +114,7 @@ const formatCur = function (value, locale, currency) {
 //Movimentações - calcular e exibir
 const displayMovements = function (acc, sort = false) {
   containerMovements.innerHTML = '';
-  //habilitando a função de sort implementando na função displayMovements
+  //Habilitando a função de sort implementando na função displayMovements
   const movs = sort
     ? acc.movements.slice().sort((a, b) => a - b)
     : acc.movements;
@@ -137,7 +137,6 @@ const displayMovements = function (acc, sort = false) {
     containerMovements.insertAdjacentHTML('afterbegin', html); // parametros de insertAdjacentHTML('aonde colocar', 'o que colocar')
   });
 };
-//displayMovements(account1.movements); // chamou a função displayMovements que fez a inserção no HTML com as informações específicas da account1
 
 //Balanço - calcular e exibir
 const calcDisplayBalance = function (acc) {
@@ -171,15 +170,14 @@ const calcDisplaySummary = function (acc) {
 };
 //calcDisplaySummary(account1.movements);
 
-// Aula 151
-// users
+// Users
 
 const creatUsernames = function (accs) {
   accs.forEach(function (acc) {
-    acc.username = acc.owner //criou um atributo que não existia
+    acc.username = acc.owner
       .toLowerCase()
       .split(' ')
-      .map(name => name[0]) //arrow func
+      .map(name => name[0])
       .join('');
   });
 };
@@ -234,7 +232,7 @@ btnLogin.addEventListener('click', function (event) {
   );
   console.log(currentAccount);
 
-  //optional chaining
+  //Optional chaining
   if (currentAccount?.pin === +inputLoginPin.value) {
     console.log('login');
     //Display UI and msg
@@ -293,7 +291,7 @@ btnTransfer.addEventListener('click', function (e) {
     currentAccount.movements.push(-amount);
     reciverAccount.movements.push(amount);
 
-    //add transfer date/time
+    //Add transfer date/time
     currentAccount.movementsDates.push(new Date().toISOString());
     reciverAccount.movementsDates.push(new Date().toISOString());
 
@@ -317,7 +315,7 @@ btnClose.addEventListener('click', function (e) {
     // console.log(index);
     accounts.splice(index, 1);
 
-    //Hide UI
+    // Hide UI
     containerApp.style.opacity = 0;
   } else {
     console.log('Credênciais inválidas');
@@ -333,7 +331,7 @@ btnLoan.addEventListener('click', function (e) {
     setTimeout(function () {
       // Add movement / add money requested
       currentAccount.movements.push(amount);
-      //Loan date/time
+      // Loan date/time
       currentAccount.movementsDates.push(new Date().toISOString());
       // Update UI
       updateUi(currentAccount);

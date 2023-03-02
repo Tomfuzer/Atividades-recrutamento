@@ -1,5 +1,7 @@
 'use strict';
 
+//Autor: Hamilton Fuzer de Oliveira
+
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.close-modal');
